@@ -1,0 +1,12 @@
+body{
+    background: url(./Images/background.jpg) repeat 0 0;
+}
+.intro{
+    text-align: center;
+    font-family: Century Gothic, sans-serif;
+    font-size: 150%;
+    margin: 1.2em;
+    margin: 1.2em;
+    padding-top: 1.4em;
+    background: inherit;
+}
