@@ -1,10 +1,18 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Dasha
- * Date: 2/14/2017
- * Time: 9:48 PM
- */
+<?php ob_start();
+include_once('database.php');
+
+session_start();
+if (empty($_SESSION['user_id'])) {
+    header('Location:index.php');
+}
+?>
+
+$query = "SELECT * FROM todos"; // SQL statement
+$statement = $db->prepare($query); // encapsulate the sql statement
+$statement->execute(); // run on the db server
+$todos = $statement->fetchAll(); // returns an array
+$statement->closeCursor(); // close the connection
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +49,8 @@
 <!-- Main Section -->
 
 <table class="table table-bordered">
+    <h1>Todos</h1>
+    <a class="btn btn-primary" href="todo_details.php?todoID=0"> +   New todo </a>
     <tr>
         <th>Done</th>
         <th>To do</th>
@@ -48,11 +58,17 @@
         <th>Edit</th>
         <th>Delete</th>
     </tr>
-    <tr>
-        <td>Jill</td>
-        <td>Smith</td>
-        <td>50</td>
-    </tr>
+    <?php
+    foreach ($todos as $todo) {
+        echo '<tr><td>' . $todo['completed'] . '</td>
+        <td>' . $todo['name_todo'] . '</td>
+        <td>' . $todo['notes_todo'] . '</td>
+        <td>' . '<a class="btn btn-primary" href="todo_details.php?todoID=<?php echo $todo[\'Id\'] ?>">
+        <i class="fa fa-pencil-square-o"></i> Edit</a>' . '</td>
+        <td>' . '<a class="btn btn-danger" href="todo_details.php?todoID=<?php echo $todo[\'Id\'] ?>">
+        <i class="fa fa-trash-o"></i> Delete</a>' . '</td></tr>';
+    }
+    ?>
 </table>
 
 <!-- JavaScript Section -->
@@ -62,3 +78,5 @@
 
 </body>
 </html>
+
+<?php ob_flush(); ?>
