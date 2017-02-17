@@ -1,3 +1,11 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Dasha
+ * Date: 2/14/2017
+ * Time: 9:48 PM
+ */
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +19,9 @@
     <link rel="stylesheet" href="./Content/app.css">
 </head>
 <body>
+
+<!-- Navbar Section -->
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -21,24 +32,28 @@
             <li><a href="./Content/about_us.html">About us</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-            <?php
-            session_start();
-            if (empty($_SESSION['user_id'])) {
-                echo '<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Log in </a></li>';
-            } else {
-                echo '<li ><a href = "table.php" ><span class="glyphicon glyphicon-user" ></span > Todo </a ></li >';
-            }
-            ?>
+            <li><a href="table.php"><span class="glyphicon glyphicon-user"></span> Todo </a></li>
         </ul>
     </div>
 </nav>
+<!-- END Navbar -->
 
-<article class="intro">
-    <h1>Hello world!</h1>
-    <p>This is my Todos. You need just to Log in and after you will be able to usr the most comfortable tool for time
-        management in the world! You will discover that the interface is easy to understand.</p>
-    <p>You will love it!</p>
-</article>
+<!-- Main Section -->
+
+<table class="table table-bordered">
+    <tr>
+        <th>Done</th>
+        <th>To do</th>
+        <th>Notes</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr>
+        <td>Jill</td>
+        <td>Smith</td>
+        <td>50</td>
+    </tr>
+</table>
 
 <!-- JavaScript Section -->
 <script src="./Scripts/lib/jquery/dist/jquery.min.js"></script>

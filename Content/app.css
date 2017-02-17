@@ -6,7 +6,11 @@ body{
     font-family: Century Gothic, sans-serif;
     font-size: 150%;
     margin: 1.2em;
-    margin: 1.2em;
     padding-top: 1.4em;
     background: inherit;
+}
+
+.loginForm{
+    margin: 10% 10% 10% 35%;
+    font-size: 150%;
 }
