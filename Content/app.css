@@ -1,6 +1,7 @@
 body{
     background: url(./Images/background.jpg) repeat 0 0;
 }
+
 .intro{
     text-align: center;
     font-family: Century Gothic, sans-serif;
@@ -13,4 +14,20 @@ body{
 .loginForm{
     margin: 10% 10% 10% 35%;
     font-size: 150%;
+}
+
+.container{
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: -2%;
+    padding: 3%;
+}
+
+table {
+    background-color: beige;
+}
+
+.button{
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
