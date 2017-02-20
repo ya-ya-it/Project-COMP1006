@@ -11,10 +11,10 @@ $todoID = $_GET['todoID'];
 if($todoID != false) {
     $query = "DELETE FROM todos WHERE todo_id = :todo_id ";
     $statement = $db->prepare($query);
-    $statement->bindValue(":game_id", $todoID);
+    $statement->bindValue(":todo_id", $todoID);
     $success = $statement->execute(); // execute the prepared query
     $statement->closeCursor(); // close off database
 }
 // redirect to index page
-header('Location: index.php');
+header('Location: table.php');
 ob_flush(); ?>

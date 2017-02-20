@@ -57,7 +57,7 @@ if($todoID == 0) {
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <h1>Todo Details</h1>
-            <form action="update_database.php" method="post">
+            <form action="updateDatabase.php" method="POST">
                 <div class="form-group">
                     <label for="IDTextField" hidden>Todo ID</label>
                     <input type="hidden" class="form-control" id="IDTextField" name="IDTextField"
@@ -74,10 +74,10 @@ if($todoID == 0) {
                            placeholder="Todo Notes" required value="<?php echo $todo['notes_todo']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="CompletedTextField">Completed</label>
-                    <input type="checkbox" name="completed" class="col-sm-offset-4" value="<?php echo $todo['completed']; ?>">
+                    <label for="CompletedCheckbox">Completed</label>
+                    <input type="checkbox" id="CompletedCheckbox" name="CompletedCheckbox" <?php if($todo['completed'] == 1){echo 'checked="checked"';} ?>">
                 </div>
-                <input type="hidden" name="isAddition" value="<?php echo $isAddition; ?>">
+                <input type="hidden" name="isAddition" id="isAddition" value="<?php echo $isAddition; ?>" />
                 <button type="submit" id="SubmitButton" class="btn btn-primary">Submit</button>
             </form>
 

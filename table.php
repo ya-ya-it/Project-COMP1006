@@ -61,14 +61,13 @@ $statement->closeCursor(); // close the connection
 
             <?php foreach($todos as $todo) : ?>
                 <tr>
-                    <td><input type="checkbox" name="completed" value="<?php echo $todo['completed'] ?>"</td>
+                    <td><input type="checkbox" name="completed" <?php if($todo['completed'] == 1){echo 'checked="checked"';} ?></td>
                     <td><?php echo $todo['name_todo'] ?></td>
                     <td><?php echo $todo['notes_todo'] ?></td>
-                    <!-- This line sends the gameID to the game_details page -->
 
                     <td><a class="btn btn-primary" href="todoDetails.php?todoID=<?php echo $todo['todo_id'] ?>"><i class="fa fa-pencil-square-o"></i> Edit</a></td>
 
-                    <td><a class="btn btn-danger" href="todoDelete.php?todoID=<?php echo $todo['todo_id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
+                    <td><a class="btn btn-danger confirm" href="todoDelete.php?todoID=<?php echo $todo['todo_id'] ?>"><i class="fa fa-trash-o"></i> Delete</a></td>
                 </tr>
             <?php endforeach; ?>
         </table>
