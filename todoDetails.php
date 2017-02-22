@@ -71,14 +71,16 @@ if($todoID == 0) {
                 <div class="form-group">
                     <label for="NotesTextField">Todo Notes</label>
                     <input type="text" class="form-control" id="NotesTextField" name="NotesTextField"
-                           placeholder="Todo Notes" required value="<?php echo $todo['notes_todo']; ?>">
+                           placeholder="Todo Notes" value="<?php echo $todo['notes_todo']; ?>">
                 </div>
                 <div class="form-group">
                     <label for="CompletedCheckbox">Completed</label>
                     <input type="checkbox" id="CompletedCheckbox" name="CompletedCheckbox" <?php if($todo['completed'] == 1){echo 'checked="checked"';} ?>">
                 </div>
                 <input type="hidden" name="isAddition" id="isAddition" value="<?php echo $isAddition; ?>" />
-                <button type="submit" id="SubmitButton" class="btn btn-primary">Submit</button>
+                <button type="submit" id="SubmitButton" class="btn btn-primary btnDetails"><i class="fa fa-pencil-square-o"></i>Submit</button>
+                <a class="btn btn-danger confirm btnDetails" href="todoDelete.php?todoID=<?php echo $todoID ?>"><i class="fa fa-trash-o"></i> Delete</a>
+                <a href="table.php" id="CancelButton" class="btn btn-primary btnDetails">Cancel</a>
             </form>
 
         </div>

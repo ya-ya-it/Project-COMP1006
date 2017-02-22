@@ -34,7 +34,7 @@
 
 <article class="intro">
     <h1>Hello world!</h1>
-    <p>This is my Todos. You need just to Log in and after you will be able to usr the most comfortable tool for time
+    <p>This is my Todos. You need just to Log in and after you will be able to use the most comfortable tool for time
         management in the world! You will discover that the interface is easy to understand.</p>
     <p>You will love it!</p>
 </article>

@@ -12,10 +12,10 @@ if (isset($_POST['CompletedCheckbox'])){
 include_once('database.php');
 
 if ($isAddition == "1") {
-    $query = "INSERT INTO todos (name_todo, notes_todo, checked) VALUES (:name_todo, :notes_todo, :checked)";
+    $query = "INSERT INTO todos (name_todo, notes_todo, completed) VALUES (:name_todo, :notes_todo, :checked)";
     $statement = $db->prepare($query); // encapsulate the sql statement
 } else {
-    $query = "UPDATE todos SET name_todo = :name_todo, notes_todo = :notes_todo, checked = :checked WHERE todo_id = :todo_id "; // SQL statement
+    $query = "UPDATE todos SET name_todo = :name_todo, notes_todo = :notes_todo, completed = :checked WHERE todo_id = :todo_id "; // SQL statement
     $statement = $db->prepare($query); // encapsulate the sql statement
     $statement->bindValue(':todo_id', $todoID);
 }
