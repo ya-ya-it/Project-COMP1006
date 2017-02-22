@@ -1,8 +1,19 @@
-body{
+/**
+File name: app.css
+Author's name: Daria Davydenko
+Student ID: 200335788
+Website name: Todos
+http://gc200335788.computerstudi.es/Project/
+
+This is a CSS file for a site. Here there is all main styles.
+ */
+
+body {
     background: url(./Images/background.jpg) repeat 0 0;
 }
 
-.intro{
+/*Style for Welcome message */
+.intro {
     text-align: center;
     font-family: Century Gothic, sans-serif;
     font-size: 150%;
@@ -11,12 +22,13 @@ body{
     background: inherit;
 }
 
-.loginForm{
+.loginForm {
     margin: 10% 10% 10% 35%;
     font-size: 150%;
 }
 
-.container{
+/*This is a style for a table */
+.container {
     margin-left: 7%;
     margin-right: 7%;
     margin-top: -2%;
@@ -27,12 +39,18 @@ table {
     background-color: beige;
 }
 
-.button{
+.button {
     margin-top: 2%;
     margin-bottom: 2%;
 }
 
-.btnDetails{
+/*This is a style for a buttons on the TodoDetails webpage*/
+.btnDetails {
     margin: 1.7em;
     width: 9em;
+}
+
+/*This is a style for crossing out todos if it is completes*/
+.completedTodo {
+    text-decoration: line-through;
 }

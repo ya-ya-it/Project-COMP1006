@@ -1,4 +1,15 @@
 <?php ob_start();
+
+/**
+ * File name: login.php
+ * Author's name: Daria Davydenko
+ * Student ID: 200335788
+ * Website name: Todos
+ * http://gc200335788.computerstudi.es/Project/
+ *
+ * This is a php file with login form.
+ */
+
 ?>
 
     <!DOCTYPE html>
@@ -8,13 +19,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Login</title>
 
+        <!-- CSS Section -->
         <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="./Scripts/lib/font-awesome/css/font-awesome.css">
         <link rel="stylesheet" href="./Content/app.css">
+        <!-- End CSS section -->
 
     </head>
     <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -28,7 +42,9 @@
             </ul>
         </div>
     </nav>
+    <!-- End Navbar -->
 
+    <!-- Login Form -->
     <div class="loginForm">
         <form method="post" action="processLogin.php">
             <fieldset class="form-group">
@@ -42,11 +58,13 @@
             </fieldset>
             <button id="LoginButton" class="btn btn-primary col-sm-offset-5">Login</button>
         </form>
+        <!-- End Login Form -->
     </div>
     <!-- JavaScript Section -->
     <script src="./Scripts/lib/jquery/dist/jquery.min.js"></script>
     <script src="./Scripts/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./Scripts/app.js"></script>
+    <!-- End JavaScript -->
 
     </body>
     </html>

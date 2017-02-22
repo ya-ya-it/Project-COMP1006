@@ -1,4 +1,15 @@
 <?php ob_start();
+
+/**
+ * File name: todoDetails.php
+ * Author's name: Daria Davydenko
+ * Student ID: 200335788
+ * Website name: Todos
+ * http://gc200335788.computerstudi.es/Project/
+ *
+ * This is a php file in which there is a details about todo. Here there is a form to change todo.
+ */
+
 include_once('database.php'); // include the database connection file
 
 //if user doesn't log in the page will automatically redirect to the Landing page
@@ -7,8 +18,9 @@ if (empty($_SESSION['user_id'])) {
     header('Location:index.php');
 }
 
+//variable which receives id of todos
 $todoID = $_GET['todoID'];
-if($todoID == 0) {
+if ($todoID == 0) {
     $todo = null;
     $isAddition = 1;
 } else {
@@ -33,6 +45,7 @@ if($todoID == 0) {
     <link rel="stylesheet" href="./Scripts/lib/bootstrap/dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="./Scripts/lib/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="./Content/app.css">
+    <!-- End CSS Section -->
 </head>
 <body>
 
@@ -53,10 +66,12 @@ if($todoID == 0) {
 </nav>
 <!-- END Navbar -->
 
+<!-- Main section -->
 <div class="container">
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <h1>Todo Details</h1>
+            <!-- Form -->
             <form action="updateDatabase.php" method="POST">
                 <div class="form-group">
                     <label for="IDTextField" hidden>Todo ID</label>
@@ -75,18 +90,26 @@ if($todoID == 0) {
                 </div>
                 <div class="form-group">
                     <label for="CompletedCheckbox">Completed</label>
-                    <input type="checkbox" id="CompletedCheckbox" name="CompletedCheckbox" <?php if($todo['completed'] == 1){echo 'checked="checked"';} ?>">
+                    <input type="checkbox" id="CompletedCheckbox"
+                           name="CompletedCheckbox" <?php if ($todo['completed'] == 1) {
+                        echo 'checked="checked"';
+                    } ?>">
                 </div>
-                <input type="hidden" name="isAddition" id="isAddition" value="<?php echo $isAddition; ?>" />
-                <button type="submit" id="SubmitButton" class="btn btn-primary btnDetails"><i class="fa fa-pencil-square-o"></i>Submit</button>
-                <a class="btn btn-danger confirm btnDetails" href="todoDelete.php?todoID=<?php echo $todoID ?>"><i class="fa fa-trash-o"></i> Delete</a>
+                <input type="hidden" name="isAddition" id="isAddition" value="<?php echo $isAddition; ?>"/>
+                <button type="submit" id="SubmitButton" class="btn btn-primary btnDetails"><i
+                            class="fa fa-pencil-square-o"></i>Submit
+                </button>
+                <?php if ($isAddition == 0) {
+                    echo '<a class="btn btn-danger confirm btnDetails" href="todoDelete.php?todoID=<?php echo $todoID ?>"><i
+                            class="fa fa-trash-o"></i> Delete</a>';
+                } ?>
                 <a href="table.php" id="CancelButton" class="btn btn-primary btnDetails">Cancel</a>
             </form>
-
+            <!-- End Form -->
         </div>
     </div>
 </div>
-
+<!-- End Main -->
 
 <!-- JavaScript Section -->
 <script src="./Scripts/lib/jquery/dist/jquery.min.js"></script>
